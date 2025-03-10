@@ -21,7 +21,7 @@
                 <tr>
                     <th>Nome</th>
                     <th>E-mail</th>
-                    <th>Ações</th>
+                    <th style="width: 1%;">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,7 +29,7 @@
                     <tr>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>
+                        <td class="d-flex justify-content-end">
                             <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning btn-sm me-1">Editar</a>
                             <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">
                                 @csrf
