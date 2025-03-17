@@ -12,6 +12,7 @@
                         <h5 class="card-title">{{ $product->name }}</h5>
                         <p class="card-text">{{ $product->description }}</p>
                         <p class="card-text"><strong>R$ {{ number_format($product->price, 2, ',', '.') }}</strong></p>
+                        <a href="{{ route('cart.add', $product->id) }}" class="btn btn-primary">Adicionar ao Carrinho</a>
                     </div>
                 </div>
             </div>
