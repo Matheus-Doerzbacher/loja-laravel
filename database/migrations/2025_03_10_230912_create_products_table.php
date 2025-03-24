@@ -18,6 +18,7 @@ return new class extends Migration
         $table->text('description');
         $table->decimal('price', 10, 2);
         $table->string('image')->nullable();
+        $table->integer('quantidade_estoque');
         $table->timestamps();
     });
 }
