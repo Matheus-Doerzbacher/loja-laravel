@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('funcionario_id')->constrained('funcionarios')->onDelete('cascade');
             $table->decimal('total_price', 10, 2);
             $table->string('status')->default('pendente');
+            $table->date('data_venda');
             $table->timestamps();
         });
     }
