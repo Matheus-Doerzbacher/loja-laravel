@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Order;
 use App\Models\Product;
 
-class ItemVendaFactory extends Factory
+class OrderItemFactory extends Factory
 {
     public function definition()
     {
