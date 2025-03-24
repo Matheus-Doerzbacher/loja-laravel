@@ -9,7 +9,7 @@ class Funcionario extends Model
     use HasFactory;
     protected $fillable = ['nome', 'email', 'cargo'];
 
-    public function orders()
+    public function vendas()
     {
         return $this->hasMany(Order::class);
     }
