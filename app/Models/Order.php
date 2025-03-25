@@ -13,7 +13,7 @@ class Order extends Model
 
     public function cliente()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function funcionario()

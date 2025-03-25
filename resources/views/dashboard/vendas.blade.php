@@ -18,10 +18,11 @@
                 <tr>
                     <td>{{ $venda->cliente->name }}</td>
                     <td>{{ $venda->funcionario->nome }}</td>
-                    <td>{{ $venda->data_venda->format('d/m/Y') }}</td>
+                    <td>{{ $venda->data_venda }}</td>
                     <td>R$ {{ number_format($venda->total_price, 2, ',', '.') }}</td>
                 </tr>
             @endforeach
+        
         </tbody>
     </table>
 </div>

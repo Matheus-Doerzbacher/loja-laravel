@@ -14,7 +14,7 @@ class DashboardController extends Controller
         $totalClientes = User::count();
         $totalProdutos = Product::count();
         $totalVendas = Order::count();
-        $faturamentoTotal = Order::sum('total');
+        $faturamentoTotal = Order::sum('total_price');
 
         return view('dashboard.index', compact('totalClientes', 'totalProdutos', 'totalVendas', 'faturamentoTotal'));
     }

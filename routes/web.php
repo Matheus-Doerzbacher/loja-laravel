@@ -33,8 +33,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::get('/orders/{id}', [OrderController::class, 'show'])->name('orders.show');
 
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+    Route::get('/dashboard2', [DashboardController::class, 'index'])->name('dashboard.index');
+    // TODOs: Excluir Rota dashboard.clientes e a funcao que ela chama
     Route::get('/dashboard/clientes', [DashboardController::class, 'clientes'])->name('dashboard.clientes');
+    // TODOs: Excluir Rota dashboard.estoque e a funcao que ela chama
     Route::get('/dashboard/estoque', [DashboardController::class, 'estoque'])->name('dashboard.estoque');
     Route::get('/dashboard/vendas', [DashboardController::class, 'vendas'])->name('dashboard.vendas');
     Route::get('/dashboard/relatorios', [DashboardController::class, 'relatorios'])->name('dashboard.relatorios');
