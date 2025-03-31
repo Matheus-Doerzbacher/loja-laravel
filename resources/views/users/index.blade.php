@@ -33,7 +33,7 @@
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->telefone }}</td>
                     <td>{{ $user->endereco }}</td>
-                    <td class="d-flex justify-content-end">
+                    <td class="flex align-middle">
                         <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning btn-sm me-1">Editar</a>
                         <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">
                             @csrf
