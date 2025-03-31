@@ -1,17 +1,22 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layouts.app')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    Teste
+@section('content')
+<div class="container">
+    <h2>Vitrine de Produtos</h2>
+    <div class="row">
+        @foreach($products as $product)
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img style="object-fit: cover; width: 500px; height: 500px;" class="rounded-md" src="{{ asset('storage/' . $product->image) }}" class="card-img-top" alt="{{ $product->name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $product->name }}</h5>
+                        <p class="card-text">{{ $product->description }}</p>
+                        <p class="card-text"><strong>R$ {{ number_format($product->price, 2, ',', '.') }}</strong></p>
+                        <a href="{{ route('cart.add', $product->id) }}" class="btn btn-primary">Adicionar ao Carrinho</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endforeach
     </div>
-</x-app-layout>
+</div>
+@endsection

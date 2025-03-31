@@ -8,7 +8,6 @@
         <thead>
             <tr>
                 <th>Cliente</th>
-                <th>Funcionário</th>
                 <th>Data</th>
                 <th>Total</th>
             </tr>
@@ -17,7 +16,6 @@
             @foreach($vendas as $venda)
                 <tr>
                     <td>{{ $venda->cliente->name }}</td>
-                    <td>{{ $venda->funcionario->nome }}</td>
                     <td>{{ $venda->data_venda }}</td>
                     <td>R$ {{ number_format($venda->total_price, 2, ',', '.') }}</td>
                 </tr>

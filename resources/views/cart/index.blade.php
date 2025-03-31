@@ -2,9 +2,8 @@
 
 @section('content')
 <div class="container">
-    <h2>Seu Carrinho</h2>
     @if(session('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
         <div>
             {{ session('success') }}
         </div>
@@ -12,7 +11,7 @@
     </div>
     @endif
     @if($cart)
-    <table class="table">
+    <table class="table mt-4">
         <thead>
             <tr>
                 <th>Produto</th>

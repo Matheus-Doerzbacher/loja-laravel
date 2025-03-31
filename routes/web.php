@@ -12,13 +12,9 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-
+    Route::get('/dashboard', [ProductController::class, 'vitrine'])->name('dashboard');
     Route::resource('users', UserController::class);
     Route::resource('products', ProductController::class);
-    Route::get('/vitrine', [ProductController::class, 'vitrine'])->name('products.vitrine');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

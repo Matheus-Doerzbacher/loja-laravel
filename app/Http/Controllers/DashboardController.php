@@ -33,7 +33,7 @@ class DashboardController extends Controller
 
     public function vendas()
     {
-        $vendas = Order::with('cliente', 'funcionario')->orderBy('data_venda', 'desc')->get();
+        $vendas = Order::with('cliente')->orderBy('data_venda', 'desc')->get();
         return view('dashboard.vendas', compact('vendas'));
     }
 

@@ -12,7 +12,6 @@ class OrderFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'funcionario_id' => Funcionario::factory(),
             'total_price' => 0, // será atualizado ao criar os itens da venda
             'status' => 'pendente',
             'data_venda' => $this->faker->dateTimeBetween('-1 year', 'now'),
