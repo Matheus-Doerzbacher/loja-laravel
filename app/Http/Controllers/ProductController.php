@@ -26,6 +26,7 @@ class ProductController extends Controller
             'description' => 'required',
             'price' => 'required|numeric',
             'image' => 'image|nullable|max:2048',
+            'quantidade_estoque' => 'required|integer|min:0',
         ]);
 
         $imagePath = $request->file('image') ? $request->file('image')->store('products', 'public') : null;
@@ -35,6 +36,7 @@ class ProductController extends Controller
             'description' => $request->description,
             'price' => $request->price,
             'image' => $imagePath,
+            'quantidade_estoque' => $request->quantidade_estoque,
         ]);
 
         return redirect()->route('products.index')->with('success', 'Produto criado com sucesso!');
@@ -52,6 +54,7 @@ class ProductController extends Controller
             'description' => 'required',
             'price' => 'required|numeric',
             'image' => 'image|nullable|max:2048',
+            'quantidade_estoque' => 'required|integer|min:0',
         ]);
 
         if ($request->hasFile('image')) {
@@ -68,6 +71,7 @@ class ProductController extends Controller
             'description' => $request->description,
             'price' => $request->price,
             'image' => $imagePath,
+            'quantidade_estoque' => $request->quantidade_estoque,
         ]);
 
         return redirect()->route('products.index')->with('success', 'Produto atualizado!');
