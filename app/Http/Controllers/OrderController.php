@@ -23,6 +23,7 @@ class OrderController extends Controller
         $order = Order::create([
             'user_id' => Auth::id(),
             'total_price' => array_sum(array_map(fn($item) => $item['price'] * $item['quantity'], $cart)),
+            'data_venda' => now(),
             'status' => 'pendente'
         ]);
 

@@ -23,6 +23,7 @@
                     <th>E-mail</th>
                     <th>Telefone</th>
                     <th>Endereço</th>
+                    <th>Funcionario</th>
                     <th style="width: 1%;">Ações</th>
                 </tr>
             </thead>
@@ -33,6 +34,7 @@
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->telefone }}</td>
                     <td>{{ $user->endereco }}</td>
+                    <td>{{ $user->isFuncionario ? 'Sim' : 'Não' }}</td>
                     <td class="flex align-middle">
                         <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning btn-sm me-1">Editar</a>
                         <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">
