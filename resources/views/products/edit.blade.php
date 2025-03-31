@@ -20,6 +20,11 @@
         </div>
 
         <div class="form-group mb-4">
+            <label for="quantidade_estoque">Estoque</label>
+            <input type="text" class="form-control" id="quantidade_estoque" name="quantidade_estoque" value="{{ $product->quantidade_estoque }}" required>
+        </div>
+
+        <div class="form-group mb-4">
             <label for="description">Descrição</label>
             <textarea class="form-control" id="description" name="description" rows="3" required>{{ $product->description }}</textarea>
         </div>
