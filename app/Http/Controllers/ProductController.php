@@ -5,22 +5,34 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Facades\Auth;
 class ProductController extends Controller
 {
     public function index()
     {
+        $isFuncionario = Auth::user()->isFuncionario;
+        if (!$isFuncionario) {
+            return redirect()->route('dashboard')->with('error', 'Você não tem permissão para acessar esta página.');
+        }
         $products = Product::all();
         return view('products.index', compact('products'));
     }
 
     public function create()
     {
+        $isFuncionario = Auth::user()->isFuncionario;
+        if (!$isFuncionario) {
+            return redirect()->route('dashboard')->with('error', 'Você não tem permissão para acessar esta página.');
+        }
         return view('products.create');
     }
 
     public function store(Request $request)
     {
+        $isFuncionario = Auth::user()->isFuncionario;
+        if (!$isFuncionario) {
+            return redirect()->route('dashboard')->with('error', 'Você não tem permissão para acessar esta página.');
+        }
         $request->validate([
             'name' => 'required',
             'description' => 'required',
@@ -44,11 +56,19 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
+        $isFuncionario = Auth::user()->isFuncionario;
+        if (!$isFuncionario) {
+            return redirect()->route('dashboard')->with('error', 'Você não tem permissão para acessar esta página.');
+        }
         return view('products.edit', compact('product'));
     }
 
     public function update(Request $request, Product $product)
     {
+        $isFuncionario = Auth::user()->isFuncionario;
+        if (!$isFuncionario) {
+            return redirect()->route('dashboard')->with('error', 'Você não tem permissão para acessar esta página.');
+        }
         $request->validate([
             'name' => 'required',
             'description' => 'required',

@@ -1,10 +1,9 @@
 @extends('layouts.app')
-
 @section('content')
+@include('layouts.navigation_admin')
 <div class="container">
-    <h2>Vendas</h2>
 
-    <table class="table">
+    <table class="table mt-4">
         <thead>
             <tr>
                 <th>Cliente</th>

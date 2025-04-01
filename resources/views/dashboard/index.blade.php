@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+@include('layouts.navigation_admin')
 <div class="container">
-    <h2>Dashboard</h2>
 
-    <div class="row">
+    <div class="row mt-4">
         <div class="col-md-3">
             <div class="card text-center">
                 <div class="card-body">
@@ -38,11 +38,5 @@
             </div>
         </div>
     </div>
-
-    <hr>
-    <a href="{{ route('dashboard.clientes') }}" class="btn btn-primary">Ver Clientes</a>
-    <a href="{{ route('dashboard.estoque') }}" class="btn btn-primary">Ver Estoque</a>
-    <a href="{{ route('dashboard.vendas') }}" class="btn btn-primary">Ver Vendas</a>
-    <a href="{{ route('dashboard.relatorios') }}" class="btn btn-primary">Ver Relatórios</a>
 </div>
 @endsection

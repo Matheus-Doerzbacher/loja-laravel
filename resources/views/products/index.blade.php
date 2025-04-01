@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@include('layouts.navigation_admin')
 <div class="container">
     <a href="{{ route('products.create') }}" class="mt-3 btn btn-primary">Adicionar Produto</a>
     <table class="table mt-3">

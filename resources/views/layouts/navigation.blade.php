@@ -26,26 +26,13 @@
                         {{ __('Meus Pedidos') }}
                     </x-nav-link>
                 </div>
+                @if(Auth::user()->isFuncionario)
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
-                        {{ __('Usuários') }}
+                    <x-nav-link :href="route('dashboard.index')" :active="request()->routeIs('dashboard.index') || request()->routeIs('users.index') || request()->routeIs('products.index') || request()->routeIs('dashboard.vendas') || request()->routeIs('dashboard.relatorios')">
+                        {{ __('Administrativo') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('products.index')" :active="request()->routeIs('products.index')">
-                        {{ __('Produtos') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard.index')" :active="request()->routeIs('dashboard.index')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard.vendas')" :active="request()->routeIs('dashboard.vendas')">
-                        {{ __('Vendas') }}
-                    </x-nav-link>
-                </div>
+                @endif
             </div>
 
             <!-- Settings Dropdown -->
@@ -101,7 +88,23 @@
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
         </div>
-
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('cart.index')" :active="request()->routeIs('cart.index')">
+                {{ __('Carrinho') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('orders.index')" :active="request()->routeIs('orders.index')">
+                {{ __('Meus Pedidos') }}
+            </x-responsive-nav-link>
+        </div>
+        @if(Auth::user()->isFuncionario)
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('dashboard.index')" :active="request()->routeIs('dashboard.index') || request()->routeIs('users.index') || request()->routeIs('products.index') || request()->routeIs('dashboard.vendas') || request()->routeIs('dashboard.relatorios')">
+                {{ __('Administrativo') }}
+            </x-responsive-nav-link>
+        </div>
+        @endif
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="px-4">

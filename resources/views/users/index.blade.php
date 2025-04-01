@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@include('layouts.navigation_admin')
 <div class="container mt-5">
     <h1 class="mb-2 h1">Lista de Usuários</h1>
 
