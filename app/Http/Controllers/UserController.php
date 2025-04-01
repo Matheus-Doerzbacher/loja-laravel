@@ -28,12 +28,18 @@ class UserController extends Controller
             'name'     => 'required',
             'email'    => 'required|email|unique:users',
             'password' => 'required|min:6',
+            'telefone' => 'numeric',
+            'endereco' => 'string',
+            'isFuncionario' => 'boolean',
         ]);
 
         User::create([
             'name'     => $request->name,
             'email'    => $request->email,
             'password' => Hash::make($request->password),
+            'telefone' => $request->telefone,
+            'endereco' => $request->endereco,
+            'isFuncionario' => $request->isFuncionario ?? false,
         ]);
 
         return redirect()->route('users.index')->with('success', 'Usuário criado com sucesso!');
@@ -57,6 +63,9 @@ class UserController extends Controller
         $request->validate([
             'name'  => 'required',
             'email' => 'required|email|unique:users,email,' . $user->id,
+            'telefone' => 'numeric',
+            'endereco' => 'string',
+            'isFuncionario' => 'boolean',
         ]);
 
         $user->update($request->all());

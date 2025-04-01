@@ -17,6 +17,18 @@
             <label for="password" class="form-label">Senha</label>
             <input type="password" name="password" class="form-control" required>
         </div>
+        <div class="mb-3">
+            <label for="endereco" class="form-label">Endereço</label>
+            <input type="endereco" name="endereco" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="telefone" class="form-label">Telefone</label>
+            <input type="telefone" name="telefone" class="form-control">
+        </div>
+        <div class="form-check mb-3">
+            <input type="checkbox" name="isFuncionario" class="form-check-input" id="isFuncionario" value="1">
+            <label for="isFuncionario" class="form-check-label">Funcionário</label>
+        </div>
         <button type="submit" class="btn btn-success w-100">Salvar</button>
     </form>
 </div>
