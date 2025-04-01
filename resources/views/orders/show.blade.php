@@ -8,8 +8,8 @@
 
     <h4>Itens do Pedido</h4>
     <ul>
-        @foreach ($order->orderItems as $item)
-            <li>{{ $item->product->name }} - {{ $item->quantity }}x - R$ {{ number_format($item->price, 2, ',', '.') }}</li>
+        @foreach ($order->itens as $item)
+            <li>{{ $item->produto->name }} - {{ $item->quantity }}x - R$ {{ number_format($item->price, 2, ',', '.') }}</li>
         @endforeach
     </ul>
 

@@ -18,6 +18,6 @@ class OrderItem extends Model
 
     public function produto()
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(Product::class, 'product_id');
     }
 }
